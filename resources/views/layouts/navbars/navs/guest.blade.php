@@ -44,10 +44,26 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-link-icon" href="{{ route('profile.edit') }}">
-                        <i class="ni ni-single-02"></i>
-                        <span class="nav-link-inner--text">{{ __('Profile') }}</span>
-                    </a>
+                    @role('administrator')
+                        <a href="{{ route('administrator.profile') }}" class="dropdown-item">
+                            <i class="ni ni-single-02"></i>
+                            <span>{{ __('My profile') }}</span>
+                        </a>
+                    @endrole
+
+                    @role('admin')
+                        <a href="{{ route('admin.profile') }}" class="dropdown-item">
+                            <i class="ni ni-single-02"></i>
+                            <span>{{ __('My profile') }}</span>
+                        </a>
+                    @endrole
+
+                    @role('checker')
+                        <a href="{{ route('checker.profile') }}" class="dropdown-item">
+                            <i class="ni ni-single-02"></i>
+                            <span>{{ __('My profile') }}</span>
+                        </a>
+                    @endrole
                 </li>
             </ul>
         </div>
