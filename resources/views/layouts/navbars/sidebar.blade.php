@@ -99,6 +99,30 @@
                         <i class="ni ni-tv-2 text-primary"></i> {{ __('Dashboard') }}
                     </a>
                 </li>
+
+                @role('administrator')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('administrator.waterpumpInfra')}}">
+                            <i class="ni ni-map-big text-blue"></i> Infrastruktur Pompa Air
+                        </a>
+                    </li>
+                @endrole
+
+                @role('administrator')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('administrator.waterpump')}}">
+                            <i class="ni ni-map-big text-blue"></i> Pompa Air
+                        </a>
+                    </li>
+                @endrole
+
+                @role('administrator')
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('administrator.user')}}">
+                            <i class="fa fa-users text-blue"></i> Users
+                        </a>
+                    </li>
+                @endrole
             
                 @role('administrator')
                     <li class="nav-item">

@@ -31,6 +31,7 @@
                     <div class=" dropdown-header noti-title">
                         <h6 class="text-overflow m-0">{{ __('Welcome!') }}</h6>
                     </div>
+
                     @role('administrator')
                         <a href="{{ route('administrator.profile') }}" class="dropdown-item">
                             <i class="ni ni-single-02"></i>
