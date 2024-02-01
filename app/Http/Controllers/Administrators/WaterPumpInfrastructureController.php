@@ -33,6 +33,12 @@ class WaterPumpInfrastructureController extends Controller
         $data = new WaterPumpInfrastructure;
         $data->name = $request->name;
         $data->location = $request->location;
+        $data->capacity = $request->capacity;
+        $data->swl_dwl = $request->swl_dwl;
+        $data->mt = $request->mt;
+        $data->kw = $request->kw;
+        $data->overhead = $request->overhead;
+        $data->lt = $request->lt;
         $data->water_pump_id = $request->water_pump_id;
         $data->save();
 
@@ -51,6 +57,12 @@ class WaterPumpInfrastructureController extends Controller
         $data = WaterPumpInfrastructure::find($id);
         $data->name = $request->name;
         $data->location = $request->location;
+        $data->capacity = $request->capacity;
+        $data->swl_dwl = $request->swl_dwl;
+        $data->mt = $request->mt;
+        $data->kw = $request->kw;
+        $data->overhead = $request->overhead;
+        $data->lt = $request->lt;
         $data->water_pump_id = $request->water_pump_id;
         $data->save();
 

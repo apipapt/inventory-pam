@@ -87,12 +87,12 @@
                                 <th scope="col">{{$data->name}}</th>
                                 <th scope="col">{{$data->waterPump->name}}</th>
                                 <th scope="col">{{$data->location}}</th>
-                                <th scope="col">{{$data->type}}</th>
-                                <th scope="col">{{$data->type}}</th>
-                                <th scope="col">{{$data->type}}</th>
-                                <th scope="col">{{$data->type}}</th>
-                                <th scope="col">{{$data->type}}</th>
-                                <th scope="col">{{$data->type}}</th>
+                                <th scope="col">{{$data->capacity}}</th>
+                                <th scope="col">{{$data->swl_dwl}}</th>
+                                <th scope="col">{{$data->mt}}</th>
+                                <th scope="col">{{$data->kw}}</th>
+                                <th scope="col">{{$data->overhead}}</th>
+                                <th scope="col">{{$data->lt}}</th>
                                 <th scope="col">
                                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#editModal{{$data->id}}">
                                         edit
