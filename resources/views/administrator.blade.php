@@ -6,7 +6,8 @@
             <div class="header-body text-center mt-7 mb-7">
                 <div class="row justify-content-center">
                     <div class="col-lg-5 col-md-6">
-                        <h1 class="text-white">{{ __('Welcome to Argon Administrator FREE Laravel Live Preview.') }}</h1>
+                        <h1 class="text-white">{{ __('Perumda Air Minum') }}</h1>
+                        <h1 class="text-white">{{ __('Tirto Panguriman') }}</h1>
                     </div>
                 </div>
             </div>

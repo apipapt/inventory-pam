@@ -30,6 +30,7 @@ class WaterPumpsController extends Controller
         $data = new WaterPump;
         $data->name = $request->name;
         $data->type = $request->type;
+        $data->status = $request->status;
         $data->save();
 
         return redirect()->route('administrator.waterpump')->with(['save' => 'Berhasil!!!']);
@@ -44,6 +45,7 @@ class WaterPumpsController extends Controller
         $data = WaterPump::find($id);
         $data->name = $request->name;
         $data->type = $request->type;
+        $data->status = $request->status;
         $data->save();
 
         return redirect()->route('administrator.waterpump')->with(['update' => 'Berhasil!!!']);

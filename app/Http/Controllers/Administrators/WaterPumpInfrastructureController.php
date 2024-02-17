@@ -55,6 +55,9 @@ class WaterPumpInfrastructureController extends Controller
         ]);
 
         $data = WaterPumpInfrastructure::find($id);
+        $waterPumpNoInstalledId = $data->water_pump_id;
+
+    
         $data->name = $request->name;
         $data->location = $request->location;
         $data->capacity = $request->capacity;
@@ -65,6 +68,14 @@ class WaterPumpInfrastructureController extends Controller
         $data->lt = $request->lt;
         $data->water_pump_id = $request->water_pump_id;
         $data->save();
+
+        $waterPumpNoInstalled = WaterPump::find($waterPumpNoInstalledId);
+        $waterPumpNoInstalled->status = "Belum Terpasang";
+        $waterPumpNoInstalled->save();
+
+        $waterPumpInstalled = WaterPump::find($request->water_pump_id);
+        $waterPumpInstalled->status = "Terpasang";
+        $waterPumpInstalled->save();
 
         return redirect()->route('administrator.waterpumpInfra')->with(['update' => 'Berhasil!!!']);
     }

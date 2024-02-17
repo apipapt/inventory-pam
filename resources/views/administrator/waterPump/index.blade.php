@@ -70,8 +70,8 @@
                                 <th scope="col">{{$data->id}}</th>
                                 <th scope="col">{{$data->name}}</th>
                                 <th scope="col">{{$data->type}}</th>
-                                <th scope="col">{{$data->waterPumpInfra ? $data->waterPumpInfra->name : 'belum terpasang'}}</th>
-                                <th scope="col">{{$data->type}}</th>
+                                <th scope="col">{{$data->waterPumpInfra ? $data->waterPumpInfra->name : '-'}}</th>
+                                <th scope="col">{{$data->status}}</th>
                                 <th scope="col">
                                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#editModal{{$data->id}}">
                                         edit
@@ -138,7 +138,7 @@
                             @endforeach
 
                             <tr>
-                                <td colspan="5">
+                                <td colspan="6">
                                   <nav aria-label="Page navigation example">
                                       <ul class="pagination justify-content-center mb-0">
                                           {{$datas->onEachSide(1)->links()}}

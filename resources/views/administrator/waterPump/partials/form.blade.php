@@ -24,4 +24,26 @@
   @endif
 </div>
 
+<div class="form-group{{ $errors->has('status') ? ' has-danger' : '' }}">
+  <label for="exampleFormControlSelect1">{{ __('Status Pompa Air') }}</label>
+  <select class="form-control form-control-alternative{{ $errors->has('status') ? ' is-invalid' : '' }}" id="exampleFormControlSelect1" name="status">
+
+    @if ($data->status)
+      <option class="active" value="{{ $data->status }}">{{ $data->status }}</option>
+    @else
+      <option class="active">Select One Status</option>
+    @endif
+
+    <option value="Terpasang">Terpasang</option>
+    <option value="Belum Terpasang">Belum Terpasang</option>
+    <option value="Perbaikan">Perbaikan</option>
+  </select>
+  
+  @if ($errors->has('status'))
+      <span class="invalid-feedback" role="alert">
+          <strong>{{ $errors->first('status') }}</strong>
+      </span>
+  @endif
+</div>
+
 

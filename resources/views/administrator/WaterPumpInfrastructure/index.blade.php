@@ -67,8 +67,8 @@
                         <thead class="thead-light">
                             <tr>
                                 <th scope="col">#No Id</th>
-                                <th scope="col">Nama Popa Air</th>
                                 <th scope="col">Nama</th>
+                                <th scope="col">Nama Popa Air</th>
                                 <th scope="col">Lokasi</th>
                                 <th scope="col">Kapasitas</th>
                                 <th scope="col">SWL / DWL</th>
@@ -87,12 +87,13 @@
                                 <th scope="col">{{$data->name}}</th>
                                 <th scope="col">{{$data->waterPump->name}}</th>
                                 <th scope="col">{{$data->location}}</th>
-                                <th scope="col">{{$data->capacity}}</th>
+                                <th scope="col">{{ number_format($data->capacity) }}</th>
                                 <th scope="col">{{$data->swl_dwl}}</th>
                                 <th scope="col">{{$data->mt}}</th>
                                 <th scope="col">{{$data->kw}}</th>
                                 <th scope="col">{{$data->overhead}}</th>
-                                <th scope="col">{{$data->lt}}</th>
+                                <th scope="col">{{ number_format($data->lt) }}</th>
+                                <th scope="col">{{$data->waterpump->status}}</th>
                                 <th scope="col">
                                     <button type="button" class="btn btn-info btn-sm" data-toggle="modal" data-target="#editModal{{$data->id}}">
                                         edit
@@ -104,7 +105,7 @@
 
                                     <!-- Modal Edit  -->
                                     <div class="modal fade" id="editModal{{$data->id}}" tabindex="-1" role="dialog" aria-labelledby="editModalLabel" aria-hidden="true">
-                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="editModalLabel">Edit Data</h5>
