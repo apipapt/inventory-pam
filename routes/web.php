@@ -57,6 +57,9 @@ Route::group(['prefix' => '/administrator', 'middleware'=>['auth', 'role:adminis
     Route::patch    ('/water-pum-infrap/{id}',        ['as' => 'administrator.waterpumpInfra.update',   'uses' => 'Administrators\WaterPumpInfrastructureController@update']);
     Route::delete   ('/water-pump-infra/{id}',        ['as' => 'administrator.waterpumpInfra.delete',   'uses' => 'Administrators\WaterPumpInfrastructureController@delete']);
 
+    // download
+    Route::post   ('/water-pump-infra/download',      ['as' => 'administrator.waterpumpInfra.download',  'uses' => 'Administrators\WaterPumpInfrastructureController@download']);
+
 });
 
 //admin

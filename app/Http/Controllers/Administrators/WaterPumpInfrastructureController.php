@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\WaterPump;
 use App\WaterPumpInfrastructure;
+use PDF;
 
 
 class WaterPumpInfrastructureController extends Controller
@@ -85,5 +86,18 @@ class WaterPumpInfrastructureController extends Controller
         $data->delete();
 
         return redirect()->route('administrator.waterpumpInfra')->with(['delete' => 'Berhasil Menghapus!!!']);
+    }
+
+    public function download(Request $request) {
+        $date = '1-'.$request->date;
+        $WaterPumpInfrastructure = WaterPumpInfrastructure::get();
+        // return view('administrator.pdf.waterMonth', [
+        //     'WaterPumpInfrastructure' => $WaterPumpInfrastructure
+        // ]);
+
+        view()->share('WaterPumpInfrastructure', $WaterPumpInfrastructure);
+        $pdf = PDF::loadView('pdf.waterPumpInfrastructure', $WaterPumpInfrastructure->toArray());
+
+        return $pdf->download('Data Lokasi Pompa Air '.$request->date.'.pdf');
     }
 }

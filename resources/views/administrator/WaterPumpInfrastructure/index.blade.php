@@ -51,7 +51,13 @@
                 <div class="card-header border-0">
                     <div class="row align-items-center">
                         <div class="col-md-6 col-6">
-                            <h3 class="mb-0">Data Infrastruktur Pompa Air</h3>
+                            <h3 class="mb-0 d-inline">Data Infrastruktur Pompa Air</h3>
+                            <form action="{{route('administrator.waterpumpInfra.download')}}" method="post" class="d-inline">
+                                @csrf
+                                @method('POST')
+                                <input type="hidden" name="date" class="form-control" value="{{date('m-Y')}}" />
+                                <button type="submit" class="btn btn-primary btn-sm" data-toggle="tooltip" data-placement="top" title="Download Data Lokasi Pompa Air">Download PDF</button>
+                            </form>
                         </div>
                         <div class="col-md-6 col-6 text-right">
                           <a href="{{ route('administrator.waterpumpInfra.create')}}" class="btn btn-sm btn-primary">
